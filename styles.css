@@ -1,0 +1,42 @@
+:root {
+  --custom-blue: rgb(64, 137, 254);
+  --bg-grey: rgb(190, 190, 190);
+  --accent-orange: rgb(255, 174, 0);
+}
+
+* {
+  outline: 1px solid orange;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 6fr;
+}
+
+.top-row {
+  grid-column: 2/4;
+  grid-row: 1;
+}
+.user-row {
+  grid-column: 2/4;
+  grid-row: 2;
+}
+.sidebar {
+  grid-row: 1/4;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.side-feed {
+}
