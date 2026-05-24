@@ -2,20 +2,18 @@
   --custom-blue: rgb(25, 146, 212);
   --bg-grey: rgb(226, 232, 239);
   --accent-orange: rgb(240, 180, 41);
+  --soft-text: rgba(99, 99, 99, 0.699);
 }
 
-* {
-  /* outline: 1px solid rgb(190, 171, 134); */
-  font-family: "Roboto", sans-serif;
-}
 body {
+  font-family: "Roboto", sans-serif;
   margin: 0;
 }
 .container {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 225px 3fr minmax(250px, 300px);
-  grid-template-rows: 100px 100px 6fr;
+  grid-template-columns: 300px 3fr 375px;
+  grid-template-rows: 100px minmax(100px, auto) 6fr;
 }
 
 .top-row {
@@ -50,25 +48,25 @@ body {
 .top-row-left input {
   flex: 1;
   min-width: 0;
-  max-width: 500px;
-  height: 25px;
+  max-width: 700px;
+  height: 30px;
   background-color: var(--bg-grey);
   border-radius: 20px;
   border: none;
 }
 
 .top-row-icons {
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: auto;
 }
 
 .avatar-small {
-  width: 50px;
+  width: 55px;
   height: auto;
 }
 
 .avatar {
-  width: 70px;
+  width: 80px;
   height: auto;
 }
 
@@ -81,30 +79,32 @@ body {
   z-index: 1;
 }
 
-.user-row-left,
+.user-row-left {
+  gap: 25px;
+}
 .user-row-right {
-  display: flex;
-  gap: 15px;
+  gap: 35px;
 }
 
 .user-row-left p {
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
 }
 
 .user-row-left h2 {
   margin-top: 0;
+  font-size: 28px;
 }
 
 .user-row-right button {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   background-color: var(--custom-blue);
   color: white;
   border: none;
-  border-radius: 20px;
-  padding: 10px 25px;
+  border-radius: 25px;
+  padding: 12px 40px;
 }
 
 .sidebar {
@@ -113,33 +113,42 @@ body {
   color: white;
   padding-left: 20px;
   display: grid;
-  gap: 25px;
+  gap: 10px;
   align-content: start;
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
+  padding: 0 20px;
 }
 
 .sidebar h3 {
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
 }
 
 .sidebar li {
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 22px;
-  padding: 10px 0 10px 0;
+  font-size: 24px;
+  padding: 15px 0;
 }
 
 .sidebar img,
 .project img {
-  width: 24px;
-  height: 24px;
-  padding-right: 15px;
+  width: 28px;
+  height: auto;
+  padding-right: 20px;
+}
+
+.sidebar .logo {
+  height: 70px;
+  width: auto;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar img {
@@ -155,39 +164,37 @@ body {
 }
 
 .projects-section {
-  padding: 15px 15px 0 15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px 15px 0 25px;
   grid-column: 2/3;
   grid-row: 3;
-  background-color: var(--bg-grey);
+  padding-bottom: 30px;
 }
 
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: minmax(250px, 1fr);
-  gap: 15px;
+  gap: 30px;
 }
 
 .project {
   display: flex;
   flex-direction: column;
-  border-left: solid 3px var(--accent-orange);
   background: white;
   border-radius: 10px;
-  padding: 0 15px 0 25px;
-  background: linear-gradient(to right, var(--accent-orange) 5px, white 5px);
+  padding: 15px 15px 0 25px;
+  background: linear-gradient(to right, var(--accent-orange) 8px, white 8px);
 }
 
 .project h4 {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 5px;
 }
 
 .project p {
   margin-top: 0;
-  color: rgb(99, 99, 99);
+  font-size: 18px;
+  color: var(--soft-text);
 }
 
 .project-icons {
@@ -200,22 +207,69 @@ body {
 
 .projects-section h3,
 .side-feed h3 {
-  margin: 0;
+  font-size: 23px;
   font-weight: 500;
-  margin: 20px 0 10px 0;
+  margin: 20px 0 15px 0;
 }
 
 .side-feed {
-  background-color: var(--bg-grey);
   padding: 15px 15px 0 15px;
 }
 
-.side-feed div {
+.feed {
   background-color: white;
   border-radius: 10px;
+  padding: 10px 40px;
 }
 
-.side-feed div,
+.announcements div {
+  padding: 0;
+}
+
+.announcements h5 {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.announcements p {
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.announcements p,
+.trending p {
+  color: var(--soft-text);
+}
+
+hr {
+  background-color: rgba(101, 99, 99, 0.234);
+  border: none;
+  height: 1px;
+}
+
+.trending-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.trending img {
+  height: 55px;
+  width: auto;
+}
+
+.trending h5 {
+  margin-bottom: 3px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.trending p {
+  margin-top: 0;
+}
+
+.announcements,
+.trending,
 .project {
   box-shadow: rgba(0, 0, 0, 0.172) 2px 2px 3px;
 }
